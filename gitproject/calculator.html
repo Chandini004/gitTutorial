@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "poppins", sans-serif;
+        box-sizing: border-box;
+      }
+      .container{
+        background: rgb(122, 233, 196);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .calculator{
+        background:black;
+        padding: 23px;
+        border-radius: 20px;
+      }
+      form input{
+        margin: 15px;
+        /* padding: 10px; */
+        width: 50px;
+        height: 50px;
+        outline: 0;
+        border: 0;
+        border-radius: 30px;
+        /* border-color: transparent; */
+        background-color: rgba(5, 238, 168, 0.5);
+        
+        font-size: 18px;
+        font-weight: 300;
+        /* background: transparent; */
+        color: rgb(238, 243, 241);
+        cursor: pointer;
+      }
+      form input:hover{
+        box-shadow: -1px -1px 15px rgba(205, 211, 205, 0.1) ,1px 1px 15px rgba(230, 233, 233, 0.1);
+        background-color: transparent;
+      }
+      form .display{
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px 0;
+      }
+      form .display input{
+        text-align: right;
+        flex: 1;
+        color: rgb(6, 163, 129);
+
+        font-size: 35px;
+        box-shadow: none;
+        background-color: transparent;
+      }
+      form .display input:hover{
+        box-shadow: none;
+        /* background-color: rgba(4, 173, 123, 0.5); */
+      }
+      .eql{
+        width: 140px;
+        border-radius: 10px;
+      }
+      .op{
+        background-color:rgba(6, 99, 72, 0.5) ;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <form action="">
+          <div class="display">
+            <input type="text" name="display">
+          </div>
+          <div>
+            <input type="button" value="AC" onclick="display.value ='' " class="op">
+            <input type="button" value="DE" onclick="display.value =display.value.toString().slice(0,-1)" class="op">
+            <input type="button" value="." onclick="display.value +='.' " class="op">
+            <input type="button" value="/" onclick="display.value +='/' " class="op"> 
+          </div>
+          <div>
+            <input type="button" value="7" onclick="display.value +='7' " >
+            <input type="button" value="8" onclick="display.value +='8' ">
+            <input type="button" value="9" onclick="display.value +='9' ">
+            <input type="button" value="*" onclick="display.value +='*' " class="op"> 
+          </div>
+          <div>
+            <input type="button" value="4" onclick="display.value +='4' ">
+            <input type="button" value="5" onclick="display.value +='5' ">
+            <input type="button" value="6" onclick="display.value +='6' ">
+            <input type="button" value="-" onclick="display.value +='-' " class="op"> 
+          </div>
+          <div>
+            <input type="button" value="1" onclick="display.value +='1' ">
+            <input type="button" value="2" onclick="display.value +='2' ">
+            <input type="button" value="3" onclick="display.value +='3' ">
+            <input type="button" value="+" onclick="display.value +='+' " class="op"> 
+          </div>
+          <div>
+            <input type="button" value="00" onclick="display.value +='00' ">
+            <input type="button" value="0" onclick="display.value +='0' ">
+            <input class="eql" type="button" value="=" onclick="display.value=eval(display.value)" >
+            <!-- <input type="button" value="CR">  -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
